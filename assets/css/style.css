@@ -4,7 +4,8 @@
 body {
   font-family: "Quicksand", sans-serif;
   color: #414040;
-  background-color: black;
+  height: auto;
+  /* background-color: black; */
   /* background-image: url("../img/ckd4a2lp.jpg"); */
 }
 
@@ -153,7 +154,7 @@ a:hover {
 
   .front .background {
     display: flex;
-
+    height: 50vh;
   }
 }
 
@@ -168,13 +169,17 @@ a:hover {
 
   }
 
+  .front .background {
 
+    height: auto;
+    padding-bottom: 5%;
+  }
 
   .front .box1 {
     background-image: url("../img/forest.jpg");
     background-size: cover;
-    text-shadow: 2px 2px 5px black;
-    color: white;
+    text-shadow: 2px 2px 5px white;
+    color: black;
   }
 }
 
@@ -182,17 +187,17 @@ a:hover {
 
 .front {
 
-  filter: drop-shadow(-5px 3px 1px rgba(50, 50, 0, 0.5));
+  /* filter: drop-shadow(-5px 3px 1px rgba(50, 50, 0, 0.5)); */
 }
 
 
 .front .background {
-  min-height: 60vh;
-  height: 60vh;
+  min-height: 40vh;
+
   box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.4);
   background-color: white;
   /* border: 1px #206bfb solid; */
-  clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%); */
 
 }
 
@@ -217,52 +222,235 @@ a:hover {
 
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 100% 0%;
-  background-attachment: scroll;
+  background-position: 50% 50%;
+
 }
 
 
 
 
 /*--------------------------------------------------------------
-# about 
+# service
+--------------------------------------------------------------*/
+/* bigger than 1066 */
+
+
+@media (min-width:834px) {
+  .service {
+    height: auto;
+    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
+    padding-bottom: 5%;
+  }
+}
+
+@media (min-width:1066px) {
+  .service {
+    height: auto;
+    padding-bottom: 5%;
+    clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 95%, 50% 100%, 0 95%);
+  }
+}
+
+@media (max-width:833px) {
+  .service {
+    height: auto;
+    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
+    padding-bottom: 5%;
+  }
+
+}
+
+.shadow {
+  filter: drop-shadow(-1px 0px 5px rgba(50, 50, 0, 0.5));
+}
+
+.service {
+  position: relative;
+  bottom: 60px;
+
+  min-height: 70vh;
+  background-color: white;
+}
+
+
+.service .flexparent {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.service .flexitem {
+  flex: 0 1 300px;
+  height: 400px;
+  /*  No stretching: */
+  margin: 20px;
+  background-color: #49654E;
+  border: 1px #ccc solid;
+}
+
+.service .box1 .img1 {
+  margin-bottom: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 90%;
+  background-image: url("../img/service1.jpg");
+  background-size: cover;
+  background-position: 40%;
+}
+
+.service .text-img {
+  color: white;
+}
+
+.service .box2 .img2 {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 90%;
+  background-image: url("../img/service2.jpg");
+  background-size: cover;
+  background-position: 40%;
+}
+
+.service .box3 .img3 {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 90%;
+  background-image: url("../img/service3.jpg");
+  background-size: cover;
+  background-position: 40%;
+}
+
+.service .box4 .img4 {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 90%;
+  background-image: url("../img/service4.jpg");
+  background-size: cover;
+  background-position: 40%;
+}
+
+.service .box5 .img5 {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 90%;
+  background-image: url("../img/service5.jpg");
+  background-size: cover;
+  background-position: 40%;
+}
+
+.service .box6 .img6 {
+  margin-bottom: 5px;
+  width: 100%;
+  height: 90%;
+  background-image: url("../img/service6.jpg");
+  background-size: cover;
+  background-position: 40%;
+}
+
+
+/*--------------------------------------------------------------
+# about
 --------------------------------------------------------------*/
 .about {
-  top: -95px;
-  z-index: -1;
-  /* margin-top: -50px; */
   position: relative;
-  min-height: 70vh;
-  height: 90vh;
+  bottom: 90px;
+}
+
+.about .btn {
+  background-color: #3D4E4A;
+  color: white;
+
+}
+
+.about article {
   background-color: white;
-
-}
-
-.about h1 {
-  top: 120px;
-  position: relative;
-
-}
-
-.flexparent {
-  display: flex;
-  top: 120px;
-}
-
-.about .box1 {
-  flex: 1;
-}
-
-.about .box1 img {
-
-  border: 1px #206bfb solid;
-  width: 30%;
+  /* min-height: 20vh; */
   height: auto;
+  padding: 5%;
 }
 
-.about .box2 {
-  flex: 3;
-  border: 1px #206bfb solid;
-  /* width: 30%;
-  height: auto; */
+
+
+
+.about .iconify {
+  font-size: 35px;
+  margin: 10px;
+}
+
+/*--------------------------------------------------------------
+# contact
+--------------------------------------------------------------*/
+
+@media (min-width:834px) {
+  .contact {
+    z-index: 80;
+    height: auto;
+    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
+    padding-bottom: 5%;
+  }
+}
+
+@media (min-width:1066px) {
+  .contact {
+    z-index: 80;
+    height: auto;
+    padding-bottom: 5%;
+    clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 95%, 50% 100%, 0 95%);
+  }
+}
+
+@media (max-width:833px) {
+  .contact {
+    z-index: 80;
+    height: auto;
+    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
+    padding-bottom: 5%;
+  }
+
+}
+
+.shadow {
+  filter: drop-shadow(-1px 0px 5px rgba(50, 50, 0, 0.5));
+
+}
+
+.contact {
+  position: relative;
+  bottom: 60px;
+
+  min-height: 70vh;
+  background-color: white;
+}
+
+.contact .flexparent {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.contact .flexitem {
+  padding: 5px;
+  /* border: 1px #ccc solid; */
+  margin: 20px;
+}
+
+/*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
+.footer {
+  position: relative;
+  bottom: 90px;
+  height: 10vh;
+
+}
+
+.footer .flexparent {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px
 }
