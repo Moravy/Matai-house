@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   color: #414040;
@@ -48,13 +52,20 @@ a:hover {
   color: #fff;
 }
 
+
+
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+.header {
+  height: 100%;
+}
+
 #header {
   transition: all 0.5s;
-
-  padding: 10px 0;
+  /* margin-top: 0; */
+  /* padding: 0 !important; */
 }
 
 #header.header-scrolled {
@@ -64,6 +75,9 @@ a:hover {
 
 #header .navbar {
   background-color: white;
+  height: auto;
+  padding: 10px;
+  position: relative;
 }
 
 #header .logo {
@@ -71,7 +85,7 @@ a:hover {
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.5px;
 }
 
@@ -90,77 +104,71 @@ a:hover {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/* Desktop Navigation */
-
-/* Get Startet Button */
-.get-started-btn {
-  margin-left: 25px;
-  background: #fff;
-  color: black;
-  border-radius: 4px;
-  padding: 8px 25px;
-  white-space: nowrap;
-  transition: 0.3s;
-  font-size: 14px;
-  display: inline-block;
-  border: 1px solid black;
-}
-
-.get-started-btn:hover {
-  background: black;
-  color: white;
-  border-color: #5f687b;
-}
-
-@media (max-width: 768px) {
-  .get-started-btn {
-    margin: 0 48px 0 0;
-    padding: 6px 18px;
-  }
-}
-
-/*--------------------------------------------------------------
 # front Section
 --------------------------------------------------------------*/
 @media (min-width:1066px) {
+  .front {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* filter: drop-shadow(-5px 3px 1px rgba(50, 50, 0, 0.5)); */
+  }
+
   .front .flexitem {
 
     /* border: 1px #206bfb solid; */
     width: 100%;
     height: 100%;
     display: grid;
-    place-items: center right;
-
+    place-items: center;
+    padding: 2%;
   }
 
   .front .background {
     display: flex;
-
+    height: auto;
+    flex-wrap: wrap;
   }
+
+  .front .content {
+    /* width: 80%; */
+  }
+
 }
 
 @media (min-width:834px) {
-  .front .flexitem {
+  .front {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* filter: drop-shadow(-5px 3px 1px rgba(50, 50, 0, 0.5)); */
+  }
 
+  .front .flexitem {
+    flex: 0 1 50%;
     /* border: 1px #206bfb solid; */
     width: 100%;
     height: 100%;
     display: grid;
-    place-items: center right;
+    place-items: center;
+    padding: 2%;
+  }
 
+  .front .content {
+    width: 100%;
   }
 
   .front .background {
     display: flex;
-    height: 50vh;
+    /* height: 65vh; */
   }
 }
 
 @media (max-width:833px) {
   .front .flexitem {
-
+    flex: 0 1 50%;
     /* border: 1px #206bfb solid; */
     width: 100%;
     height: 100%;
@@ -169,27 +177,30 @@ a:hover {
 
   }
 
-  .front .background {
-
-    height: auto;
-    padding-bottom: 5%;
-  }
-
   .front .box1 {
-    background-image: url("../img/forest.jpg");
-    background-size: cover;
-    text-shadow: 2px 2px 5px white;
-    color: black;
+    padding: 5%;
+  }
+
+  .front .box2 {
+    opacity: 0;
+  }
+
+
+
+  .front .content {
+    width: 100%;
   }
 }
 
 
-
-.front {
-
-  /* filter: drop-shadow(-5px 3px 1px rgba(50, 50, 0, 0.5)); */
+.front .box1 {
+  padding: 5%;
 }
 
+
+.front img {
+  height: auto;
+}
 
 .front .background {
   min-height: 40vh;
@@ -202,14 +213,15 @@ a:hover {
 }
 
 
+
 .front .content {
-  padding: 10%;
-  width: 70%;
+  /* padding: 10%; */
+  padding: 5%;
   /* border: 1px #206bfb solid; */
 }
 
 .front .box1 {
-  flex: 1;
+
   background-color: white;
   /* z-index: 2; */
   /* border: 1px #206bfb solid; */
@@ -217,8 +229,8 @@ a:hover {
 
 
 .front .box2 {
-  flex: 1;
-  background-image: url("../img/forest.jpg");
+
+  background-image: url("../assets/img/forest.jpg");
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -227,47 +239,49 @@ a:hover {
 }
 
 
-
-
 /*--------------------------------------------------------------
 # service
 --------------------------------------------------------------*/
 /* bigger than 1066 */
+@media (max-width:833px) {
+  .service {
+    height: auto;
+    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
+  }
+}
 
 
 @media (min-width:834px) {
   .service {
     height: auto;
     clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
-    padding-bottom: 5%;
+
   }
 }
 
 @media (min-width:1066px) {
   .service {
     height: auto;
-    padding-bottom: 5%;
-    clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 95%, 50% 100%, 0 95%);
+    clip-path: polygon(0 3%, 50% 0, 100% 3%, 100% 97%, 50% 100%, 0 97%);
   }
 }
 
-@media (max-width:833px) {
-  .service {
-    height: auto;
-    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
-    padding-bottom: 5%;
-  }
-
-}
 
 .shadow {
   filter: drop-shadow(-1px 0px 5px rgba(50, 50, 0, 0.5));
+  height: auto;
+  position: relative;
+  bottom: 35px;
+
+  /* bottom: 10px; */
+
 }
 
-.service {
-  position: relative;
-  bottom: 60px;
 
+.service {
+
+  width: 100%;
+  padding-bottom: 5%;
   min-height: 70vh;
   background-color: white;
 }
@@ -292,10 +306,9 @@ a:hover {
 
 .service .box1 .img1 {
   margin-bottom: 5px;
-  margin-bottom: 5px;
   width: 100%;
   height: 90%;
-  background-image: url("../img/service1.jpg");
+  background-image: url("../assets/img/service1.jpg");
   background-size: cover;
   background-position: 40%;
 }
@@ -308,7 +321,7 @@ a:hover {
   margin-bottom: 5px;
   width: 100%;
   height: 90%;
-  background-image: url("../img/service2.jpg");
+  background-image: url("../assets/img/service2.jpg");
   background-size: cover;
   background-position: 40%;
 }
@@ -317,7 +330,7 @@ a:hover {
   margin-bottom: 5px;
   width: 100%;
   height: 90%;
-  background-image: url("../img/service3.jpg");
+  background-image: url("../assets/img/service3.jpg");
   background-size: cover;
   background-position: 40%;
 }
@@ -326,7 +339,7 @@ a:hover {
   margin-bottom: 5px;
   width: 100%;
   height: 90%;
-  background-image: url("../img/service4.jpg");
+  background-image: url("../assets/img/service4.jpg");
   background-size: cover;
   background-position: 40%;
 }
@@ -335,7 +348,7 @@ a:hover {
   margin-bottom: 5px;
   width: 100%;
   height: 90%;
-  background-image: url("../img/service5.jpg");
+  background-image: url("../assets/img/service5.jpg");
   background-size: cover;
   background-position: 40%;
 }
@@ -344,35 +357,33 @@ a:hover {
   margin-bottom: 5px;
   width: 100%;
   height: 90%;
-  background-image: url("../img/service6.jpg");
+  background-image: url("../assets/img/service6.jpg");
   background-size: cover;
   background-position: 40%;
 }
-
 
 /*--------------------------------------------------------------
 # about
 --------------------------------------------------------------*/
 .about {
   position: relative;
-  bottom: 90px;
+  bottom: 35px;
+  display: grid;
+  place-items: center;
+  padding: 45px;
 }
 
 .about .btn {
   background-color: #3D4E4A;
   color: white;
-
 }
 
 .about article {
   background-color: white;
   /* min-height: 20vh; */
   height: auto;
-  padding: 5%;
+  padding-top: 1%;
 }
-
-
-
 
 .about .iconify {
   font-size: 35px;
@@ -382,34 +393,29 @@ a:hover {
 /*--------------------------------------------------------------
 # contact
 --------------------------------------------------------------*/
+@media (max-width:833px) {
+  .contact {
+    height: auto;
+    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
+  }
+}
+
 
 @media (min-width:834px) {
   .contact {
-    z-index: 80;
     height: auto;
     clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
-    padding-bottom: 5%;
+
   }
 }
 
 @media (min-width:1066px) {
   .contact {
-    z-index: 80;
     height: auto;
-    padding-bottom: 5%;
-    clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 95%, 50% 100%, 0 95%);
+    clip-path: polygon(0 3%, 50% 0, 100% 3%, 100% 97%, 50% 100%, 0 97%);
   }
 }
 
-@media (max-width:833px) {
-  .contact {
-    z-index: 80;
-    height: auto;
-    clip-path: polygon(0 1%, 50% 0, 100% 1%, 100% 99%, 50% 100%, 0 99%);
-    padding-bottom: 5%;
-  }
-
-}
 
 .shadow {
   filter: drop-shadow(-1px 0px 5px rgba(50, 50, 0, 0.5));
@@ -417,9 +423,9 @@ a:hover {
 }
 
 .contact {
-  position: relative;
-  bottom: 60px;
 
+
+  z-index: 80;
   min-height: 70vh;
   background-color: white;
 }
@@ -442,14 +448,14 @@ a:hover {
 # footer
 --------------------------------------------------------------*/
 .footer {
-  position: relative;
-  bottom: 90px;
-  height: 10vh;
+  /* position: relative;
+  bottom: 30px; */
+  /* height: 10vh; */
 
 }
 
 .footer .flexparent {
-  padding-top: 80px;
+  padding: 0px 30px 30px 30px;
   display: flex;
   justify-content: center;
   font-size: 30px
